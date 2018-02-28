@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <style>
+    div p:nth-child(4) {
+      color: red;
+    }
+    div p:nth-of-type(3) {
+      color: blue;
+    }
+    .table {
+      width: 200px;
+      background: orange;
+      text-align: center;
+    }
+    .table span:first-child::after {
+      content: " ";
+      display: table;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div>one</div>
+    <p>two</p>
+    <p>three</p>
+    <div>xxx</div>
+    <p>four</p>
+    <p>five</p>
+  </div>
+  <div class="table">
+    <span>11111111111</span>
+    <span>22222222222</span>
+  </div>
+</body>
+</html>

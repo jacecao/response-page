@@ -1,0 +1,701 @@
+/* 网站头部 */
+header {
+  width: 100%;
+}
+header .top {
+  line-height: 3rem;
+  padding: 0 1.5rem;
+  color: #fff;
+  background-color: #555;
+  border-bottom: 1px solid #ecc000;
+}
+header .top .tel {
+  float: left;
+}
+header .top ul {
+  text-align: right;
+}
+header .top ul li {
+  display: inline-block;
+}
+/* 这里的-3px是解决元素之间的空隙（li加入背景色就能看见空隙） */
+header .top ul li + li {
+  border-left: 1px solid #999;
+  margin-left: -3px;
+}
+header .top ul li a {
+  display: inline-block;
+  padding: 0 1.5rem;
+  color: #fff;
+}
+/* 顶部导航媒体查询 */
+@media only screen and (max-width: 50em) {
+  header .top ul li a {
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (min-width: 30.0625em) and (max-width: 50em) {
+  
+}
+
+@media only screen and (max-width: 30em) {
+  header .top .tel,
+  header .top ul li:nth-child(3),
+  header .top ul li:nth-child(4) {
+    display: none;
+  } 
+}
+
+header .main {
+  padding: 0;
+}
+/* padding: 1rem 1.5rem 
+   这里需要修改为原因是在放大时.brand撑破了.main
+   因其浮动导致下面的布局产生变化
+   这里要么就是清除浮动要么就是改变.brand的padding大小
+*/
+header .main .brand {
+  float: left;
+  padding: 1rem 1.5rem 0;
+}
+
+header .main ul {
+  text-align: right;
+}
+
+header .main ul li {
+  display: inline-block;
+  border-left: 1px solid #f0ede9;
+}
+
+header .main ul li a {
+  display: inline-block;
+  padding: 0 2rem;
+  line-height: 5.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #7c7a65;
+}
+
+/* 顶部导航媒体查询 */
+@media only screen and (max-width: 50em) {
+  header .main .brand {
+    float: none;
+    display: block;
+    padding: 0;
+    margin: 1.5rem auto 0.5rem auto;
+    text-align: center;
+  }
+  header .main ul {
+    text-align: center;
+  }
+  header .main ul li {
+    border: none;
+  }
+  header .main ul li a {
+    padding: 0 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 30.0625em) and (max-width: 50em) {
+  header .main ul li a {
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 30em) {
+  header .main ul li {
+    line-height: 3rem;
+  }
+  header .main ul li:first-child {
+    display: none;
+  }
+  header .main ul li a {
+    font-weight: normal;
+    padding: 0 0.5rem;
+  }
+}
+
+/* 网站主要内容 */
+.container {
+  width: 100%;
+}
+
+.transaction {
+  width: 100%;
+  background-color: #7c7365;
+  /* overflow: hidden; */
+}
+
+.trans-content {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+.trans-data {
+  float: left;
+  padding: 1rem;
+  text-align: left;
+}
+
+.trans-data span {
+  display: inline-block;
+  line-height: 3rem;
+  color: #fff;
+}
+
+.trans-data span.trans-money {
+  font-size: 2.2rem;
+  color: #ff9900;
+  letter-spacing: 3px;
+  margin: 0 1rem;
+  padding: 0 1rem;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.9);
+  /* box-shadow: 1px 2px 1px #333 inset; */
+  box-shadow: 1px 2px 1px #333;
+}
+
+.trans-report {
+  text-align: right;
+}
+
+.trans-report a {
+  display: inline-block;
+  padding: 1rem;
+  line-height: 3rem;
+  color: #fff;
+}
+
+@media only screen and (max-width: 50em) {
+  .trans-data {
+    padding: 1rem 0.5rem;
+  }
+  .trans-data span {
+    font-size: 1.2rem;
+  }
+  .trans-data span.trans-money {
+    font-size: 1.6rem;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+  }
+  .trans-report a {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 30em) {
+  .transaction {
+    padding: 0.5rem 0;
+  }
+  .trans-data, .trans-report {
+    float: none;
+    text-align: center;
+  }
+  .trans-data, .trans-report a {
+    padding: 0;
+  }
+}
+/* 广告样式 */
+.ad {
+  /* display: none; */
+}
+
+
+/* 功能介绍 */
+/* 这里设置字体位0 是防止元素间隙的存在 */
+.feature {
+  width: 90%;
+  margin: 2rem auto;
+  font-size: 0;
+}
+
+.feature .item {
+  display: inline-block;
+  width: calc(33.3333333% - 3rem);
+  padding: 1rem;
+  font-size: 1.4rem;
+  background-color: #fff;
+  box-shadow: 0 0 4px #ccc;
+}
+
+.feature .item + .item {
+  margin-left: 1.5rem;
+}
+
+.feature .item h3 {
+  display: inline-block;
+  width: 40%;
+  margin: 0;
+  padding: 0;
+  font-size: 3.3rem;
+  text-align: center;
+  color: #ff9900;
+  vertical-align: top;
+}
+
+.feature .item p {
+  display: inline-block;
+  width: 55%;
+  margin: 0;
+  padding: 0;
+  color: #999;
+}
+@media only screen and (min-width: 30.0625em) and (max-width: 50em) {
+  .feature .item h3 {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .feature .item p
+  {
+    width: 100%;
+    text-align: center;  
+  }  
+}
+@media only screen and (max-width: 30em) {
+  .feature {
+    width: 96%;
+  }
+  .feature .item, .feature .item + .item {
+    display: block;
+    width: auto;
+    margin: 1rem auto;  
+  }
+}
+/* 通知公告 */
+.notice {
+  width: 90%;
+  margin: 2rem auto;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  background-color: #fff;
+  box-shadow: 0 0 4px #ccc;
+}
+
+.notice a {
+  float: left;
+  display: inline-block;
+  width: 70%;
+  margin-left: 2rem;
+}
+
+.notice a:first-child {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.notice a:first-child::before {
+  content: '最新公告：\00a0\00a0';
+  color: #aaa;
+}
+
+.notice a span {
+  color: #999;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+.notice a.more {
+  width: calc(30% - 6rem);
+  text-align: right;
+  margin-right: 2rem;
+  color: #ff9900;
+}
+@media only screen and (max-width: 30em) {
+  .notice {
+    width: 96%;
+    margin: 1rem auto;
+    font-size: 1.2rem;
+  }
+  .notice a {
+    margin-left: 1rem;
+  }
+  .notice a.more {
+    width: calc(30% - 4rem);
+  }
+  .notice a span {
+    display: none;
+  }
+}
+/* 产品布局 */
+.product {
+  width: 90%;
+  margin: 2rem auto;
+  font-size: 1.4rem;
+  background-color: #f5f9fa;
+  border-top: 2px solid #ff9900;
+  box-shadow: 0 0 4px #ccc;
+}
+
+.product h2 {
+  float: left;
+  width: 20%;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: normal;
+  color: #635c51;
+}
+
+.product h2 em {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+
+.product h2 em:first-child {
+  margin-top: 4rem;
+}
+
+.product .product-content {
+  float: right;
+  width: 79.5%;
+  border-left: 1px solid #eee;
+  background-color: #fff;
+}
+
+.product .product-content .item {
+  width: 100%;
+}
+.product .product-content .item + .item {
+  border-top: 1px solid #eee;
+}
+.product-content .item h3 {
+  float: left;
+  width: 30%;
+  margin: 1.5rem 0;
+  font-size: 1.4rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+.product-content .item h3 em {
+  margin-right: 0.5rem;
+  color: #ff9900;
+  font-size: 3.6rem;
+  font-style: normal;
+}
+
+.product-content .item .info {
+  float: left;
+  width: 40%;
+  padding: 1rem;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  font-size: 1.4rem;
+}
+
+.product-content .item .info p {
+  float: left;
+  display: inline-block;
+  text-align: center;
+  width: 56%;
+}
+
+.product-content .item .info p:last-child {
+  width: 40%;
+}
+
+.product-content .item .info p span {
+  display: block;
+  font-size: 2.4rem;
+  color: #ff9900;
+}
+
+.product-content .item .info p span i {
+  font-size: 1.2rem;
+  font-style: normal;
+  color: #999;
+}
+
+.product .item .buy {
+  float: left;
+  width: calc(30% - 4.4rem);
+  padding: 1rem;
+}
+
+.product .item .buy a {
+  display: block;
+  width: 90%;
+  margin: 1.5rem auto;
+  max-width: 12rem;
+  line-height: 4rem;
+  text-align: center;
+  color: #fff;
+  background-color: #ff9900;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 50em) {
+  .product {
+    width: 96%;
+  }
+  .product h2 {
+    float: none;
+    width: 100%;
+  }
+  .product h2 em, .product h2 em:first-child {
+    display: inline;
+    margin-top: 0;
+  }
+  .product .product-content {
+    float: none;
+    width: 96%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width:30.0625em) and (max-width: 50em) {
+  .product-content .item .info {
+    font-size: 1.2rem;
+  }
+  .product-content .item .info p span {
+    font-size: 2rem;
+  }
+  .product-content .item .info p span i {
+  font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 30em) {
+  /* ======================== 
+    这里h2 em是点金之笔啊 值得回味
+    这里是设置'table'达到换行的目的
+   ========================== */
+  .product h2 em:first-child::before {
+    content: " ";
+    display: table;
+  }
+  .product-content .item h3 em {
+    margin-right: 0;
+    font-size: 3rem;
+  }
+  .product-content .item .info p,
+  .product-content .item h3 {
+    margin: 1.2rem 0 0.5rem 0; 
+  }
+  .product-content .item .info {
+    width: 70%;
+    padding: 0;
+    border: none;
+    float: right;
+  }
+  .product-content .item .info p span {
+    font-size: 2rem;
+  }
+  .product .item .buy {
+    float: none;
+    width: 100%;
+    padding: 0 0 1rem 0;
+    /* 这里就要灵活使用清除浮动 */
+    clear: both;
+  }
+  .product .item .buy a {
+    line-height: 3rem;
+    margin: 0 auto;
+    max-width: 20rem;
+  }
+}
+/* 内容底部导航 */
+.footer {
+  padding: 3rem 0;
+  background-color: #fff;
+  border-top: 2px solid #eee;
+}
+
+.footer-content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.footer-content .brand {
+  float: left;
+  display: block;
+  filter: grayscale(100%);
+  width: 20%;
+  height: 35px;
+  background: url('../img/logo@1x.png') no-repeat left;
+  background-size: 150px 35px;
+}
+
+.footer-content ul {
+  float: left;
+  width: 15%;
+  text-align: right;
+}
+
+.footer-content ul li {
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+
+.footer-content ul li.title {
+  font-size: 1.6rem;
+  line-height: 3rem;
+}
+
+@media only screen and (max-width: 50em) {
+  .footer-content .brand {
+    display: none;
+  }
+  .footer-content ul {
+    width: 20%;
+    text-align: center;
+  }
+}
+/* 底部信息条 */
+footer {
+  width: 100%;
+  padding: 3rem 0 5rem;
+  background-color: #ededed;
+}
+
+footer ul {
+  text-align: center;
+}
+
+footer ul li {
+  display: inline-block;
+}
+
+footer ul li .icon {
+  display: inline-block;
+  text-indent: -999rem;
+  margin-right: 1.5rem;
+  background: url(../img/cert1.png) no-repeat;
+  background-size: 466px 447px;
+  overflow: hidden;
+}
+
+footer ul li .icon-zfyexk {
+  width: 38px;
+  height: 27px;
+  background-position: -369px -45px;
+}
+
+footer ul li .icon-pcirz {
+  width: 78px;
+  height: 27px;
+  background-position: -110px -96px;
+}
+
+footer ul li .icon-visarz {
+  width: 36px;
+  height: 27px;
+  background-position: -426px -90px;
+}
+
+footer ul li .icon-jmfw {
+  width: 63px;
+  height: 27px;
+  background-position: -401px -186px;
+}
+
+footer ul li .icon-wlgs {
+  width: 22px;
+  height: 27px;
+  background-position: -48px -48px;
+}
+
+footer ul li .icon-rzcx {
+  width: 75px;
+  height: 27px;
+  background-position: 0 -320px;
+}
+
+footer ul li .icon-gs {
+  width: 30px;
+  height: 30px;
+  margin-right: 0;
+  background: url(../img/cert2.png) no-repeat;
+  background-size: 30px;
+}
+footer p {
+  text-align: center;
+  color: #999;
+}
+
+@media only screen and (max-width: 30em) {
+  footer ul li .icon {
+    margin-right: 1em;
+  }
+  footer ul li:last-child .icon {
+    margin-right: 0;
+  }
+}
+
+
+
+
+/*================= 
+  打印样式 
+  =================*/
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  /* 这个是在打印过程中将元素的指定属性显示在元素后方 */
+  /* 这里是将a标签的链接地址显示出来 */
+
+  a[href]::after {
+    content: "("attr(href)")";
+  }
+  /* abbr标签是专门用于缩写词语，其title属性是填写缩写的全称 */
+  /* <abbr title="nodejs">NODE</abbr> */
+  abbr[title]::after {
+    content: "("attr[title]")";
+  }
+
+  /* href为“#”和“javascript” 不打印href*/ 
+  a[href="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  /* 
+    关于引文设置，避免引文内分页
+    保持引文的完整性  
+   */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+
+  /* 避免标题和文字分离开 */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}  

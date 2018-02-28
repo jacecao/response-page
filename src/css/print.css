@@ -1,0 +1,69 @@
+/*================= 
+  打印样式 
+  =================*/
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  /* 这个是在打印过程中将元素的指定属性显示在元素后方 */
+  /* 这里是将a标签的链接地址显示出来 */
+
+  a[href]::after {
+    content: "("attr(href)")";
+  }
+  /* abbr标签是专门用于缩写词语，其title属性是填写缩写的全称 */
+  /* <abbr title="nodejs">NODE</abbr> */
+  abbr[title]::after {
+    content: "("attr[title]")";
+  }
+
+  /* href为“#”和“javascript” 不打印href*/ 
+  a[href="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  /* 
+    关于引文设置，避免引文内分页
+    保持引文的完整性  
+   */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+
+  /* 避免标题和文字分离开 */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}  

@@ -1,0 +1,128 @@
+/**********  
+* 页面样式
+***********/
+
+/* ========= 
+  基本默认至
+  ========== */
+
+/* ==========
+  为什么是62.5%
+  我们像设置em或rem的初始值是10px
+  浏览器默认字体大小是16px
+  那么 10px / 16px * 100 = 62.5
+  所以当设置html字体大小位62.5%时
+  那么 1em = 1rem = 10px
+  =========== */
+html {
+  font-size: 62.5%;
+  color: #222;
+}
+
+/* ====================
+  设置文本被选中的样式
+  ===================== */
+::selection {
+  background-color: #b3d4fc;
+  text-shadow: none;
+}  
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p,h1,h2,h3 {
+  cursor: default;
+}
+
+/* =============
+  工具样式
+ =============== */
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-center {
+  text-align: center !important;
+}
+
+.show {
+  display: block !important;
+}
+.hide {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* ====================
+  为什么有一个‘a’ 
+  这里a表示一种字体名称
+  但明显客户端不可能装有这个名称的字体
+  这里只是为了通过css对font属性书写的要求。
+  ===================== */
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+/* 清除浮动 */
+.clearfix::before,
+.clearfix::after {
+  content: ' ';
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========
+浏览器更新提示
+============= */
+.browserupgrade {
+  margin: 0;
+  padding: 1rem;
+  background: #ccc;
+}
+
+
+/* ================
+  自定义页面样式
+  ================= */
+body {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  background-color: #f7f7f7;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #0ae !important;
+  text-decoration: underline;
+}

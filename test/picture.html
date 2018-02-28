@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>picture</title>
+    <link rel="stylesheet" href="../src/css/normalize.css">
+    <link rel="stylesheet" href="../src/css/reset.css">
+    <style>
+      .content {
+        width: 100%;
+        margin: 0 auto;
+      }
+      img {
+        display: block;
+        /* width: 100%; */
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <picture>
+        <source media="(max-width: 36em)" srcset="img/xxx-s.jpg 768w">
+        <source srcset="img/xxxx.jpg 1800w">
+        <source type="image/webp" srcset="logo.webp 48w">
+        <img src="img/xxx.jpg" alt="">
+      </picture>
+    </div>
+  </body>
+</html>
